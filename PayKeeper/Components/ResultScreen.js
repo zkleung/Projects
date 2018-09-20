@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import moment from 'moment';
 import { AppRegistry, StyleSheet, Text, View, Image, TouchableOpacity, TextInput, ImageBackground} from 'react-native';
 import { createStackNavigator } from 'react-navigation';
+import Config from 'react-native-config';
 export default class ResultScreen extends Component {
 	constructor(props) {
 		super(props);
@@ -10,7 +11,7 @@ export default class ResultScreen extends Component {
 			name: this.props.navigation.getParam('ign'),
 			champion: null,
 			data: [],
-			API_KEY: 'RGAPI-a2e7e65f-315d-496e-9d3c-fba3af843189',
+			API_KEY: Config.REACT_APP_LASTPLAYTIME_API_KEY,
 			lastTimePlayed: '',
 			champ: this.props.navigation.getParam('champ'),
 			champName: null,
@@ -191,6 +192,7 @@ export default class ResultScreen extends Component {
 	  	
 	}
 	render() {
+		console.log(this.state.API_KEY);
 	  	if (this.state.data.status){
 	  		return(
 	  			<ImageBackground source={require('../img/poro.png')} style={styles.container}>
