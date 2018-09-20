@@ -192,7 +192,6 @@ export default class ResultScreen extends Component {
 	  	
 	}
 	render() {
-		console.log(this.state.API_KEY);
 	  	if (this.state.data.status){
 	  		return(
 	  			<ImageBackground source={require('../img/poro.png')} style={styles.container}>
