@@ -6,7 +6,6 @@
 
 // allocates space for the gameboard and its squares
 gameboard* gameboard_create(int numRows, int numCols) {
-    // Homework TODO: complete this function by adding code here
     gameboard* result;
     result = (gameboard*)malloc(sizeof(gameboard));
     result->squares = (square**)malloc(sizeof(square*)*numRows);
@@ -114,7 +113,6 @@ gamestate gameboard_state(const gameboard board) {
 }
 // check horizontal strips containing square (row, col)
 bool gameboard_check_square_horizontal(gameboard* board){
-    // Homework TODO: define this function
     for(int j = 0; j < board->numCols - 3; j++){
         for(int i = 0; i < board->numRows; i++){
             if(board->squares[i][j] == RED_COIN && board->squares[i][j + 1] == RED_COIN && board->squares[i][j + 2] == RED_COIN && board->squares[i][j + 3] == RED_COIN){
@@ -132,7 +130,6 @@ bool gameboard_check_square_horizontal(gameboard* board){
 
 // check vertical strips containing square (row, col)
 bool gameboard_check_square_vertical(gameboard* board){
-    // Homework TODO: define this function
     for(int i = 0; i < board->numRows - 3; i++){
         for(int j = 0; j < board->numCols; j++){
             if(board->squares[i][j] == RED_COIN && board->squares[i + 1][j] == RED_COIN && board->squares[i + 2][j] == RED_COIN && board->squares[i + 3][j] == RED_COIN){
@@ -150,7 +147,6 @@ bool gameboard_check_square_vertical(gameboard* board){
 
 // check diagonal strips containing square (row, col)
 bool gameboard_check_square_diagonal(gameboard* board) {
-    // Homework TODO: define this function
     for(int i = 0; i < board->numRows - 3; i++){
         for(int j = 0; j < board->numCols - 3; j++){
             if(board->squares[i][j] == RED_COIN && board->squares[i + 1][j + 1] == RED_COIN && board->squares[i + 2][j + 2] == RED_COIN && board->squares[i + 3][j + 3] == RED_COIN){
